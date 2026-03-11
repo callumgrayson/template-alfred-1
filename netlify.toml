@@ -1,0 +1,39 @@
+# netlify.toml – Netlify build/deploy config
+# This overrides UI settings when present in repo root.
+
+[build]
+  # Base directory (if your app is in a subfolder, e.g. "frontend/") – usually leave blank
+  # base = ""
+
+  # Build command – run to generate static assets/functions
+  # Examples:
+  #   - Vite/React: "pnpm run build"
+  #   - Next.js: "next build"
+  #   - Astro: "astro build"
+  command = "pnpm run build"   # ← placeholder; update per framework
+
+  # Publish directory – where built static files live
+  # Examples:
+  #   - Vite: "dist"
+  #   - Next.js (static export): "out"
+  #   - Next.js (server): ".next"
+  #   - Astro: "dist"
+  publish = "dist"             # ← placeholder; update per framework
+
+  # Optional: functions directory if using Netlify Functions
+  # functions = "netlify/functions"
+
+# Environment variables (per context) – these override dashboard vars
+# Use dashboard for secrets; use here only for non-sensitive defaults
+[context.production.environment]
+  NODE_VERSION = "22"          # Matches our .nvmrc – ensures remote uses same Node
+
+[context.deploy-preview.environment]
+  NODE_VERSION = "22"
+
+# Optional: branch-specific overrides (e.g. staging branch)
+# [context.staging]
+
+# Optional: build plugins (add later if needed, e.g. for image optimization)
+# [[plugins]]
+#   package = "@netlify/plugin-nextjs"  # example for Next.js
