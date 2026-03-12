@@ -8,7 +8,7 @@
     "prepare": "husky",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "build:local": "netlify build --context production",
+    "build:local": "netlify build --context production --offline",
     "doctor": "pnpm format:check && pnpm build:local"
   },
   "keywords": [],
