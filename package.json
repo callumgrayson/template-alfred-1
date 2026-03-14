@@ -11,11 +11,10 @@
     "doctor": "pnpm format:check && pnpm build:local",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview --port 4173",
     "test:unit": "vitest",
     "test:unit:watch": "vitest --watch",
     "test:e2e": "playwright test",
-    "test:e2e:ci": "pnpm build && pnpm preview & pnpm test:e2e"
+    "test:e2e:ci": "pnpm build && pnpm test:e2e"
   },
   "keywords": [],
   "author": "",
