@@ -4,24 +4,40 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "build:local": "netlify build --context production --offline",
     "doctor": "pnpm format:check && pnpm build:local",
-    "build": "echo 'Placeholder: Replace this with real framework build command (e.g. vite build, next build)' && exit 0"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test:unit": "vitest",
+    "test:e2e": "playwright test"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.13.1",
   "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@tailwindcss/vite": "^4.2.1",
+    "@vitejs/plugin-react": "^6.0.1",
+    "autoprefixer": "^10.4.27",
     "husky": "9.1.7",
     "lint-staged": "16.3.3",
-    "prettier": "3.8.1"
+    "playwright": "^1.58.2",
+    "postcss": "^8.5.8",
+    "prettier": "3.8.1",
+    "tailwindcss": "^4.2.1",
+    "vite": "^8.0.0",
+    "vitest": "^4.1.0"
   },
   "lint-staged": {
     "*.{js,ts,jsx,tsx,json,css,md,yml,yaml}": "prettier --write"
+  },
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
   }
 }
