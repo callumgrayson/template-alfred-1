@@ -11,9 +11,11 @@
     "doctor": "pnpm format:check && pnpm build:local",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
+    "preview": "vite preview --port 4173",
     "test:unit": "vitest",
-    "test:e2e": "playwright test"
+    "test:unit:watch": "vitest --watch",
+    "test:e2e": "playwright test",
+    "test:e2e:ci": "pnpm build && pnpm preview & pnpm test:e2e"
   },
   "keywords": [],
   "author": "",
@@ -22,9 +24,12 @@
   "devDependencies": {
     "@playwright/test": "^1.58.2",
     "@tailwindcss/vite": "^4.2.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
     "@vitejs/plugin-react": "^6.0.1",
     "autoprefixer": "^10.4.27",
     "husky": "9.1.7",
+    "jsdom": "^28.1.0",
     "lint-staged": "16.3.3",
     "playwright": "^1.58.2",
     "postcss": "^8.5.8",
